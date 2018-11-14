@@ -12,6 +12,12 @@
     </form>
 
     <% if @action == "attack" %>
-    <%= $game.defender.name %> attacked <%= $game.attacker.name %>
+    <%= $game.defender.name %> attacked <%= $game.attacker.name %><br />
+    <% if $game.player_1.hit_points == 0 ||  if $game.player_2.hit_points == 0 %>
+    <%= $game.defender.name %> is the winner.
+    <h2> All hail the victor </h2>
     <% end %>
+    <% end %>
+    <% end %>
+
   </body>

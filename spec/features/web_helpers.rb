@@ -6,3 +6,8 @@ def sign_in_and_play
   fill_in("player_2", with: player_2)
   click_button('Submit')
 end
+
+def attack_player
+  11.times do click_button('Attack')
+  end
+end

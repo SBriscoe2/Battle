@@ -7,7 +7,11 @@ class Player
   end
 
   def take_damage(damage)
+    if @hit_points >= 1
     @hit_points -= damage
+    else
+    puts "#{@attacker} is the winner"
+    end
   end
 end
 
@@ -23,6 +27,9 @@ class Game
 
   def attack(attacker, defender, damage)
     defender.take_damage(damage)
+    if defender.hit_points < 1
+      puts "#{attacker} is the winner"
+    end
   end
 
   def switch_players
