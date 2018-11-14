@@ -1,2 +1,17 @@
 
-<h1> <%= @player_one %> vs. <%= @player_two %>
+<body>
+  <h2> Game on: </h2>
+    <%= $game.player_1.name %> vs. <%= $game.player_2.name %>!<br />
+  <h1> </h1>
+    <%= $game.player_1.name %> HP: <%= $game.player_1.hit_points %><br />
+  <h1> </h1>
+    <%= $game.player_2.name %> HP: <%= $game.player_2.hit_points %><br />
+  <h1> </h1>
+    <form action="/play">
+      <button type="submit" name="action" value="attack">Attack</button>
+    </form>
+
+    <% if @action == "attack" %>
+    <%= $game.defender.name %> attacked <%= $game.attacker.name %>
+    <% end %>
+  </body>
